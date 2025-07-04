@@ -1,20 +1,22 @@
 package org.example;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class ComparerTest {
 
     @Test
-    void testFirstGreater(){
-        assertEquals("Первое число больше", Comparer.compare(10, 5));
+    public void testFirstGreater() {
+        Assert.assertEquals(Comparer.compare(10, 5), "Первое число больше");
     }
+
     @Test
-    void testSecondGreater(){
-        assertEquals("Второе число больше", Comparer.compare(2, 9));
+    public void testSecondGreater() {
+        Assert.assertEquals(Comparer.compare(2, 9), "Второе число больше");
     }
+
     @Test
-    void testEqual(){
-        assertEquals("Числа равны", Comparer.compare(7, 7));
+    public void testEqual() {
+        Assert.assertEquals(Comparer.compare(7, 7), "Числа равны");
     }
 }

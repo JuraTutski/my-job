@@ -1,20 +1,19 @@
 package org.example;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class TriangleTest {
 
     @Test
-    void testAreaCorrect(){
+    public void testAreaCorrect(){
         double result = Triangle.area(3, 4, 5);
-        assertEquals(6.0, result, 0.001);
+        Assert.assertEquals( result, 6.0, 0.001);
     }
 
-    @Test
-    void testNegativeSides(){
-        assertThrows(IllegalArgumentException.class, () -> Triangle.area(-1, 4, 5));
-
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void testNegativeSides() {
+        Triangle.area(-1, 4, 5);
     }
 
 }
